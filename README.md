@@ -28,7 +28,7 @@ This project was developed during 7 days of Code Challenge under Oracle Next Gen
 ## Requests
 
 <p align="justify">
-  Node.js version 22.13.1 
+  N/A 
 </p>
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -36,8 +36,7 @@ This project was developed during 7 days of Code Challenge under Oracle Next Gen
 
 <p align="justify">
   <ol>
-  <li> Make sure you have the correct version of Node.Js</li> 
-<li> Type 'node script.js' on terminal and press enter</li> 
+  <li> Type 'script.js' on terminal and press enter</li> 
 
   </ol>
 </p>
