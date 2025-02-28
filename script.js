@@ -40,10 +40,15 @@ function compararVariaveis(numero,string){
 compararVariaveis(numeroUm,stringUm);
 compararVariaveis(numeroTrinta, stringTrinta);
 compararVariaveis(numeroDez, stringDez);*/
+
 function saveInfo(){
     let name = document.getElementById('name').value;
     let age = document.getElementById('age').value;
     let language = document.getElementById('language').value;
     let text = document.getElementById('message');
     text.innerHTML += `<p> Olá ${name}, você tem ${age} anos e já está aprendendo ${language}!</p>`;
+    document.getElementById('name').setAttribute('placeholder', 'Digite seu nome');
+    document.getElementById('age').setAttribute('placeholder', 'Digite sua idade');
+    document.getElementById('language').setAttribute('placeholder', '' );
 }
+
