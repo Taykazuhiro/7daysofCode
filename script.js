@@ -46,9 +46,67 @@ function saveInfo(){
     let age = document.getElementById('age').value;
     let language = document.getElementById('language').value;
     let text = document.getElementById('message');
+    let questions = document.getElementById('content__questions');
     text.innerHTML += `<p> Olá ${name}, você tem ${age} anos e já está aprendendo ${language}!</p>`;
-    document.getElementById('name').setAttribute('placeholder', 'Digite seu nome');
-    document.getElementById('age').setAttribute('placeholder', 'Digite sua idade');
-    document.getElementById('language').setAttribute('placeholder', '' );
+    questions.innerHTML = `
+            <h4>Quer uma ajuda para decidir sua carreira? Responda as perguntas abaixo</h4>
+            <p> Qual área você quer seguir?</p>
+            <button id="button_front" class="content__button__front" onclick="front()">Front-End</button>
+            <button id="button_back" class="content__button__back" onclick="back()">Back-End</button>
+    `
 }
 
+function front(){
+        let frontLanguage = prompt('Você quer aprender React ou Vue?');
+        let frontSpecialist = prompt('Você quer se especializar em Front-end? Responda SIM ou  NÃO')
+        if (frontSpecialist == 1){
+            let text = document.getElementById('message');
+            let questions = document.getElementById('content__questions');
+            text.innerHTML += `<p> Legal então você quer ser um especialista em ${frontLanguage}, boa escolha!</p>`;
+            questions.innerHTML = `
+            <h4>Quer uma ajuda para decidir sua carreira? Responda as perguntas abaixo</h4>
+            <p> Em quais tecnologias gostaria de se especializar ou conhecer?</p>
+            <input type="text" id="language" class="content__input">
+            <button id="button_save__language" class="content__button__front" onclick="saveLanguage()">Salvar</button>
+            <button id="button_sent" class="content__button__back" onclick="send()">Enviar</button>
+    `
+        } else {
+            let text = document.getElementById('message');
+            let questions = document.getElementById('content__questions');
+            text.innerHTML += `<p> Legal então você quer ser um fullstack que desenvolve em ${frontLanguage}, boa escolha!</p>`;
+            questions.innerHTML = `
+            <h4>Quer uma ajuda para decidir sua carreira? Responda as perguntas abaixo</h4>
+            <p> Em quais tecnologias gostaria de se especializar ou conhecer?</p>
+            <input type="text" id="language" class="content__input">
+            <button id="button_save__language" class="content__button__front" onclick="saveLanguage()">Salvar</button>
+            <button id="button_sent" class="content__button__back" onclick="send()">Enviar</button>`
+}
+
+
+function back(){
+        let backLanguage = prompt('Você quer aprender C# ou Java?');
+        let backSpecialist = prompt('Você quer se especializar em Back-end? Responda SIM ou  NÃO');
+        if (backSpecialist == 1){
+            let text = document.getElementById('message');
+            let questions = document.getElementById('content__questions');
+            text.innerHTML += `<p> Legal então você quer ser um especialista em ${backLanguage}, boa escolha!</p>`;
+            questions.innerHTML = `
+            <h4>Quer uma ajuda para decidir sua carreira? Responda as perguntas abaixo</h4>
+            <p> Em quais tecnologias gostaria de se especializar ou conhecer?</p>
+            <input type="text" id="language" class="content__input">
+            <button id="button_save__language" class="content__button__front" onclick="saveLanguage()">Salvar</button>
+            <button id="button_sent" class="content__button__back" onclick="send()">Enviar</button>
+    `
+        } else {
+            let text = document.getElementById('message');
+            let questions = document.getElementById('content__questions');
+            text.innerHTML += `<p> Legal então você quer ser um fullstack que desenvolve em ${frontLanguage}, boa escolha!</p>`;
+            questions.innerHTML = `
+            <h4>Quer uma ajuda para decidir sua carreira? Responda as perguntas abaixo</h4>
+            <p> Em quais tecnologias gostaria de se especializar ou conhecer?</p>
+            <input type="text" id="language" class="content__input">
+            <button id="button_save__language" class="content__button__front" onclick="saveLanguage()">Salvar</button>
+            <button id="button_sent" class="content__button__back" onclick="send()">Enviar</button>`
+}
+}
+}

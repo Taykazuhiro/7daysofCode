@@ -28,7 +28,7 @@ body {
     background-image: url('assets/header-desk.1730889067.png');
     position:relative;
     width: 100%;
-    height: 25rem;
+    height: 26.25rem;
     margin: auto;
     background-size:cover;
     background-position: center;
@@ -92,8 +92,41 @@ body {
     font-weight: 600;
 }
 
+.content__button__front{
+    display: flex;
+    justify-content: space-between;
+    max-width: 40%;
+    margin: 1rem 1.5rem; 
+    border-radius: 5px;
+    padding: 0.5rem 0.75rem;
+    background-color: var(--color-secondary);
+    color: var(--color-links);
+    border: none;
+    font-weight: 600;
+}
+.content__button__back{
+    max-width: 40%;
+    margin: 1rem 1.5rem; 
+    border-radius: 5px;
+    padding: 0.5rem 0.75rem;
+    background-color: var(--color-tertiary);
+    color: var(--color-button-hover);
+    border: none;
+    font-weight: 600;
+}
+
 .content__button__save:hover{
     background-color: var(--color-button-hover);
+}
+
+.content__button__back:hover{
+    background-color: var(--color-button-hover);
+    color: var(--color-button);
+}
+
+.content__button__front:hover{
+    background-color: var(--color-links);
+    color: var(--color-secondary);
 }
 
 .footer{
