@@ -27,27 +27,66 @@ body {
 .content {
     background-image: url('assets/header-desk.1730889067.png');
     position:relative;
-    width: 100%;
+    width: 95%;
     height: 400px;
+    margin: auto;
     background-size:cover;
     background-position: center;
     background-repeat: no-repeat;
     background-color: var(--color-primary);
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    gap: 10px;
 }
 
 .content__questions {
     background-color: var(--color-primary);
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    max-width: 50%;
+    max-width: 40%;
+    max-height: 300px;
     border-radius: 2%;
     border: var(--color-secondary) solid;
     padding: 3% 1%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     }
 
+.content__questions h4{
+    text-align: center;
+}
+
 .content__answer {
-    background-color: #f9ff00;
+    background-color: var(--color-primary);
+    max-width: 40%;
+    max-height: 300px;
+    border-radius: 2%;
+    border: var(--color-tertiary) solid;
+    padding: 3% 1%;
+    display: flex;
+    align-items: center;
+}
+
+.content__input{
+    max-width: 40%;
+    margin: 1rem 1.5rem; 
+    border-radius: 5px;
+    padding: 0.5rem;
+}
+
+.content__button__save{
+    max-width: 40%;
+    margin: 1rem 1.5rem; 
+    border-radius: 5px;
+    padding: 0.5rem 0.75rem;
+    background-color: var(--color-button);
+    color: var(--color-text);
+    border: none;
+    font-weight: 600;
+}
+
+.content__button__save:hover{
+    background-color: var(--color-button-hover);
 }
 
 .footer{
