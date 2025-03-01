@@ -43,7 +43,7 @@ body {
 .content__questions {
     background-color: var(--color-primary);
     width: 40%;
-    max-height: 18.75rem;
+    height: 18.75rem;
     border-radius: 2%;
     border: var(--color-secondary) solid;
     padding: 3% 1%;
@@ -52,8 +52,9 @@ body {
     align-items: center;
     }
 
-.content__questions h4{
+.content__questions h4 h5 p{
     text-align: center;
+    padding: 3% 1%;
 }
 
 .content__answer {
@@ -92,9 +93,14 @@ body {
     font-weight: 600;
 }
 
-.content__button__front{
+.botoes {
     display: flex;
-    justify-content: space-between;
+    align-items: center;
+    justify-content:center;
+    gap: 10px;
+}
+
+.content__button__front{
     max-width: 40%;
     margin: 1rem 1.5rem; 
     border-radius: 5px;
