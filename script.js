@@ -41,7 +41,7 @@ function compararVariaveis(numero,string){
 compararVariaveis(numeroUm,stringUm);
 compararVariaveis(numeroTrinta, stringTrinta);
 compararVariaveis(numeroDez, stringDez);*/
-let languageList = [];
+let language = [];
 
 function saveInfo(){
     let name = document.getElementById('name').value;
@@ -73,46 +73,45 @@ function front(){
             let text = document.getElementById('message');
             let questions = document.getElementById('content__questions');
             text.innerHTML += `<p> Legal então você quer ser um fullstack que desenvolve em ${frontLanguage}, boa escolha!</p>`;
-            questions.innerHTML = '';
+            questions.innerHTML = '<p> Em quais tecnologias gostaria de se especializar ou conhecer?</p>';
+            setTimeout(languageList,2000);
 }
 }
 
 function back(){
-        let backLanguage = prompt('Você quer aprender C# ou Java?');
-        let backSpecialist = prompt('Você quer se especializar em Back-end? Responda SIM ou  NÃO');
-        if (backSpecialist == 1){
-            let text = document.getElementById('message');
-            let questions = document.getElementById('content__questions');
-            text.innerHTML += `<p> Legal então você quer ser um especialista em ${backLanguage}, boa escolha!</p>`;
-            questions.innerHTML = `
-            <h4>Quer uma ajuda para decidir sua carreira? Responda as perguntas abaixo</h4>
-            <p> Em quais tecnologias gostaria de se especializar ou conhecer?</p>
-            <input type="text" id="language" class="content__input">
-            <button id="button_save__language" class="content__button__front" onclick="saveLanguage()">Salvar</button>
-            <button id="button_sent" class="content__button__back" onclick="send()">Enviar</button>
-    `
-        } else {
-            let text = document.getElementById('message');
-            let questions = document.getElementById('content__questions');
-            text.innerHTML += `<p> Legal então você quer ser um fullstack que desenvolve em ${frontLanguage}, boa escolha!</p>`;
-            questions.innerHTML = `
-            <h4>Quer uma ajuda para decidir sua carreira? Responda as perguntas abaixo</h4>
-            <p> Em quais tecnologias gostaria de se especializar ou conhecer?</p>
-            <input type="text" id="language" class="content__input">
-            <button id="button_save__language" class="content__button__front" onclick="saveLanguage()">Salvar</button>
-            <button id="button_sent" class="content__button__back" onclick="send()">Enviar</button>`
+    let backLanguage = prompt('Você quer aprender #C ou Java?');
+    let backSpecialist = prompt('Você quer se especializar em Back-end? Responda SIM ou  NÃO')
+    if (backSpecialist == 1){
+        let text = document.getElementById('message');
+        let questions = document.getElementById('content__questions');
+        text.innerHTML += `<p> Legal então você quer ser um especialista em ${backLanguage}, boa escolha!</p>`;
+        questions.innerHTML = '';
+    } else {
+        let text = document.getElementById('message');
+        let questions = document.getElementById('content__questions');
+        text.innerHTML += `<p> Legal então você quer ser um fullstack que desenvolve em ${backLanguage}, boa escolha!</p>`;
+        questions.innerHTML = '<p> Em quais tecnologias gostaria de se especializar ou conhecer?</p>';
+        setTimeout(languageList,2000);
 }
 }
 
-function saveLanguage(){
-    let language = document.getElementById('language').value;
-    let saveButton = document.getElementById('button_save_language').cli;
-    console.log(saveButton, language)
-    /*while (saveButton == true){
-        let text = document.getElementById('message');
-        text.innerHTML += `
-        <ul>
-        <li> ${language} </li>
-        </ul>`;
-    }*/
+function languageList (){    
+    let text = document.getElementById('message');
+    let unitLanguage = prompt('Qual linguagem gostaria de conhecer ou aprender?'); 
+    language.push(unitLanguage);
+    let questions = document.getElementById('content__questions');
+    questions.innerHTML += `<ul> <li> ${unitLanguage} </li></ul>`;
+    let answer = prompt('Quer aprender mais alguma linguagem? Responda com SIM ou NÃO');
+    while (answer == 'sim'){
+        if (answer == 'não'){
+            break;
+        }
+        unitLanguage = prompt('Qual linguagem gostaria de conhecer ou aprender?'); 
+        questions = document.getElementById('content__questions');
+        questions.innerHTML += `<ul> <li> ${unitLanguage} </li></ul>`;
+        language.push(unitLanguage);
+        unitLanguage.value = '';
+        answer = prompt('Quer aprender mais alguma linguagem? Responda com SIM ou NÃO');
+    }
+    text.innerHTML += `Então você tem interesse em ${language}? muito bom!`
 }
